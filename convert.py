@@ -1,3 +1,3 @@
-# import tensorflow
+import tensorflow
 
 print("hello tensorflow")
