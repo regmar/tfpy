@@ -17,11 +17,11 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import keras
-from keras import backend as K
-from keras.layers import *
-from keras.regularizers import l2
-from keras.models import Model
+import tensorflow.keras
+from tensorflow.keras import backend as K
+from tensorflow.keras.layers import *
+from tensorflow.keras.regularizers import l2
+from tensorflow.keras.models import Model
 
 
 def preprocess(x):
@@ -53,7 +53,7 @@ def conv_1d_time_stacked_model(input_size=16000, num_classes=11):
     num_classes: How many classes are to be recognized.
 
   Returns:
-    Compiled keras model
+    Compiled tensorflow.keras model
   """
   input_layer = Input(shape=[input_size])
   x = input_layer
@@ -106,9 +106,9 @@ def conv_1d_time_stacked_model(input_size=16000, num_classes=11):
 
   model = Model(input_layer, x, name='conv_1d_time_stacked')
   model.compile(
-      optimizer=keras.optimizers.Adam(lr=3e-4),
-      loss=keras.losses.categorical_crossentropy,
-      metrics=[keras.metrics.categorical_accuracy])
+      optimizer=tensorflow.keras.optimizers.Adam(lr=3e-4),
+      loss=tensorflow.keras.losses.categorical_crossentropy,
+      metrics=[tensorflow.keras.metrics.categorical_accuracy])
   return model
 
 
