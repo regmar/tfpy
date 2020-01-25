@@ -18,7 +18,7 @@ from model import relu6
 
 tf.compat.v2.executing_eagerly
 
-new_model= tf.keras.models.load_model(filepath="ep-083-vl-0.1770.hdf5",custom_object_scope={'relu6':relu6})
+new_model= tf.keras.models.load_model(filepath="ep-083-vl-0.1770.hdf5",custom_objects={'relu6':relu6})
 # tflite_converter = tf.compat.v2.lite.TFLiteConverter.from_keras_model(new_model)
 # tflite_model = tflite_converter.convert()
 
