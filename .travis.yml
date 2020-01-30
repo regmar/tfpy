@@ -1,7 +1,7 @@
 dist: xenial
 language: python
 python:
-  - "3.6"
+  - "3.7"
 install:
   - sudo apt update
   - sudo apt install python3-dev python3-pip
@@ -10,5 +10,5 @@ install:
   - pip3 install keras
   - pip3 install tensorflow
 script:
-  - find /usr -name '*.pyc' -delete
-  - python3 convert.py
+#  - find /usr -name '*.pyc' -delete
+  - python3 model.py
