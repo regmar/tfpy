@@ -167,7 +167,7 @@ def func1():
 
   # print(tensorflow.keras.utils.get_custom_objects())
 
-  model2=keras.models.load_model('ep-083-vl-0.1770.hdf5')
+  model2=keras.models.load_model('ep-083-vl-0.1770.hdf5',custom_objects={'relu6':relu6})
 
 
   print("func1 end")
