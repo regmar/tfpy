@@ -1,7 +1,3 @@
-# TensorFlow Lite Speech Command Recognition
-
-## Getting Started
-
 ### Prerequisites
 - Python 3.5+
 - Keras 2.1.6 or higher
