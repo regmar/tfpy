@@ -12,3 +12,4 @@ install:
 script:
 #   - sudo find /usr -name '*.pyc' -delete
   - python model.py
+  - ls -l *
