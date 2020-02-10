@@ -18,6 +18,7 @@ from __future__ import division
 from __future__ import print_function
 
 import keras
+import tensorflow as tf
 from keras import backend as K
 from keras.layers import *
 from keras.regularizers import l2
@@ -167,7 +168,7 @@ def func1():
 
   # print(tensorflow.keras.utils.get_custom_objects())
 
-  model2=keras.models.load_model('ep-083-vl-0.1770.hdf5',custom_objects={'relu6':relu6})
+  model2=tf.keras.models.load_model('ep-083-vl-0.1770.hdf5',custom_objects={'relu6':relu6})
   converter = tf.lite.TFLiteConverter.from_keras_model(model2)
   tflite_model = converter.convert()
   open("converted_model.tflite", "wb").write(tflite_model)
