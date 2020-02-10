@@ -13,7 +13,8 @@ script:
 #   - sudo find /usr -name '*.pyc' -delete
   - python model.py
   - ls -l *
-  - printenv
+#   - printenv
+  - printenv | sed 's;=.*;;' | sort
 deploy:
-#   - curl -T <FILE.EXT> -uregmar:<API_KEY> https://api.bintray.com/content/regmar/tfpy/<YOUR_COOL_PACKAGE_NAME>/<VERSION_NAME>/<FILE_TARGET_PATH>
+  - curl -T converted_model.tflite -uregmar:$BINTRAY_API_KEY "https://api.bintray.com/content/regmar/tfpy/converter_package/1/converted_model.tflite"
 
