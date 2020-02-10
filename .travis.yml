@@ -16,5 +16,8 @@ script:
 #   - printenv
   - printenv | sed 's;=.*;;' | sort
 deploy:
+  provider: script
+  skip_cleanup: true
+  script:
   - curl -T converted_model.tflite -uregmar:$API_KEY "https://api.bintray.com/content/regmar/tfpy/converter_package/1/converted_model.tflite"
 
